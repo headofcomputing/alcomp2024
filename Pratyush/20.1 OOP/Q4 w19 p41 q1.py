@@ -14,6 +14,10 @@ class PrintAccount():
     def GetName(self):
         return self.__firstName+" "+self.__lastName
     
+    #for question vi
+    def GetPrintID(self):
+        return self.__printID
+    
     #question iv
     def AddCredits(self,moneyInput):
         bonus=0
@@ -25,12 +29,60 @@ class PrintAccount():
         bought=moneyInput*25
         if moneyInput>=20:
             bonus=50
-        elif moneyinput>=10:
+        elif moneyInput>=10:
             bonus=25
         self.__credits=self.__credits + bought + bonus
 
     
-#StudentAccount : ARRAY[0,999] OF PrintAccount
+#question v
+# StudentAccount : ARRAY[0,999] OF PrintAccount
 studentAccount=[None]*1000
+for i in range(0,1000):
+    studentAccount[i]=PrintAccount("Bingus","Frog","bilsmi1")
+
+
+
+#question vi
+
+def CreateID(fName,lName):
+    def findEmpty():
+        emptyCounter=0
+        empty=False
+        while empty==False and emptyCounter<=999:
+            if studentAccount[emptyCounter] == None:
+                empty==True
+                return emptyCounter
+            else:
+                emptyCounter=emptyCounter+1
+        if empty==False:
+            return -1
+    
+    def checkName(name):
+        found=False
+        counter=0
+        while found==False and counter<=999:
+            if studentAccount[counter].GetPrintID() == name:
+                found=True
+            else:
+                counter=counter+1
+        return found
 
     
+    
+    increment=1
+
+    done=False
+    printID=fName[:3]+lName[:3]+str(increment)
+    
+    #if its not in the list
+    if checkName(printID)==False:
+        studentAccount[findEmpty()]=PrintAccount(fName,lName,printID)
+    else:
+        increment=increment+1
+        
+
+
+
+            
+
+CreateID("bill","sbith")
