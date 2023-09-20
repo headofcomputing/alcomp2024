@@ -60,7 +60,5 @@ def binarySearchX(array,searchval):
     return comparisons
 
 
-print(linearSearch(10000),'comparisons were made for linear search')
-print(binarySearchX(treesCut,10000),'comparisons were made for binary search')
 
         
