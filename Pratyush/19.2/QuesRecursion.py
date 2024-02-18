@@ -6,3 +6,4 @@ def X(n):
         print(n%2)
 
 X(40)
+

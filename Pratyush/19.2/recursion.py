@@ -83,9 +83,6 @@ def permutations(lst):
             result.append(perm[:i] + [first] + perm[i:])
     return result
 
-        
-
-
 
 print(permutations([1,2,3]))
 

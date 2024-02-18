@@ -64,6 +64,7 @@ class SLinkedList():
                         return False
                 else:
                     if currentPointer.dataval==value:
+                        pass
 
                 
 
@@ -75,6 +76,7 @@ list1.addNode(Node('E'))
 list1.addNode(Node('C'))
 list1.addNode(Node('D'))
 list1.listprint()
+list1.search('H')
 
 
 
