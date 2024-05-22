@@ -74,7 +74,7 @@ def InOrder(currentNode):
 
         
 
-
+PrintAll()
 InOrder(0)     
 
 

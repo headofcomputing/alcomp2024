@@ -14,7 +14,7 @@ def Enqueue(string):
 
 def Dequeue():
     global Queue, HeadPointer,TailPointer
-    if HeadPointer==-1:
+    if HeadPointer==-1 or HeadPointer==TailPointer:
         print("queue is empty, cannot dequeue")
         return "Empty"
     else:
@@ -22,21 +22,21 @@ def Dequeue():
         return Queue[HeadPointer-1]
         
 def ReadData():
-    myFile=open(r"C:\Users\Acer\Programming\Python\alcomp2024\PastPapers\w23p41\QueueData.txt",'r')
-    while True:
-        line=str(myFile.readline())
-        if line=="":
-            break
-        else:
-            Enqueue(line.strip())
-    myFile.close()
-
-    '''
     try:
-        ReadData():
+        myFile=open(r"PastPapers\w23p41\QueueData.txt",'r')
+        while True:
+            line=str(myFile.readline())
+            if line=="":
+                break
+            else:
+                Enqueue(line.strip())
+        myFile.close()
     except IOError:
-        print("No File")
-    '''
+        print("file not found")
+
+
+
+
 
     
 class RecordData():

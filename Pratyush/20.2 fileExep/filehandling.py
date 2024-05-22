@@ -44,5 +44,16 @@ def combine_display():
             flag=True
         counter=counter+1
     print(x,' ',y)
+    f1.close()
+    f2.close()
 
 combine_display()
+
+#Easiest Method
+try:
+    f1=open()
+    for line in f1:
+        print(line)
+    f1.close()
+except IOError:
+    print("file not found")
